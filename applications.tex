@@ -1,0 +1,97 @@
+\documentclass{article}
+
+\parindent=.25in
+\parskip=2ex
+
+\usepackage{amsthm}
+\usepackage{amsbsy}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[dvips]{lscape}
+
+\input{lauracode}
+\input{lauracodePHD}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+
+\title{4 Percent of Laura's Dissertation}
+\author{Laura Taalman, A.B.D.}
+
+\begin{document}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\maketitle
+
+\section{Applications}
+The word \textit{applications} means different things to different people. If we wear our Mathematican hats we are always looking 
+for a new tool to prove some theorem. Or reprove a celebrated theorem in a new way. Computer Scientists are always concerned with algorithms and performanace analysis and statisticians or \textit{data scientists} are after getting a handle on the asymptotics of estimators and samplers. In short, each specialist wants to know what a given tool will contribute to his field. 
+\paragraph{} The remarkable thing about concentration of measure is that is uses span a wide range - from something practical as decoding neural signals to esoteric topics such as analyzing convex bodies in Banach spaces. 
+It is too much to go beyond one or two applications.
+So I'll cite some here 
+\begin{itemize}
+\item  Milman's proof of Dvoretzky's theorem on sections of convex bodies
+\item a widely cited lemma of Johnson and Lindenstrauss concerning low-distortion dimensionality reduction in $\mathbb{R}^{n}$ by random projections.
+\item statistics and empirical processes and machine learning\cite{BBL04b}
+\end{itemize}
+In the interest of keeping this document short we shall only look at the last example.
+\subsection{Rademacher Processes}
+A key technique in the theory of empirical processes is \textit{Rademacher symmetrization}. This was first introduced into empirical processes in a classical paper by Gine \cite{Gine1984}
+so we'll show how this applies in the context of Talagrand's inequality. 
+\paragraph{} Let $\epsilon_i,i=1,\cdots,n,$ be i.i.d Rademacher random signs (taking values -1,1 with probability 1/2), independent of the $X'_{i}s$, defined on a large product probability space with product probability Pr, denote the joint expectation by E, and the $E_{\epsilon}$ and $E_{X}$ the corresponding expectations w.r.t the $\epsilon_i 's$ $X'_{i}s$,
+respectively. The following symmetrization inequality holds for random variables in arbitrary normed spaces, but we state it for the suprenum norm relevant in empirical process theory: For $\mathcal{F}$ a class of functions on $(S,\mathcal{A})$, define $\|
+H\|_{\mathcal{F}} = \mathrm{sup}_{f \in \mathcal{F}} |H(f)|$.
+
+\begin{lemma}
+Let $\mathcal{F}$ be a uniformly bounded P-centered class of functions defined on a measurable space $(S,\mathcal{A})$. Let 
+$\epsilon_{i}$ be i.i.d. Rademachers as above, and let $a_i, i = 1,\cdots,n$ be any sequence of real numbers. Then
+\begin{equation}
+\dfrac{1}{2}E \|\sum_{i=1}^{n} \epsilon_{i} f(X_{i})\|_{\mathcal{F}} \leq 
+E \|\sum_{i=1}^{n} f(X_i)\|_{\mathcal{F}} \leq \|\sum_{i=1}^{n} \epsilon_{i}(f(X_i)+a_{i})\|_{\mathcal{F}}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let us assume for simplictly that $\mathcal{F}$ is countable (so
+that we can neglect measurability problems). Since $E_{X}f(X_{i}) = 0$ for every $f,i,$ the first inequality follows from
+\begin{equation*}
+E \|\sum_{i=1}^{n} \epsilon_{i}(f(X_i)\|_{\mathcal{F}}
+= E_{\epsilon} E_{X} \leq E_{\epsilon} E_{X} \|\sum_{i: \epsilon_{i} = -1}f(X_{i}) + E_{X} \sum_{i: \epsilon_{i} =1}f(X_{i})\|_{\mathcal{F}}
+ + E_{\epsilon} E_{X} \|\sum_{i: \epsilon_{i} = 1}f(X_{i}) + E_{X} \sum_{i: \epsilon_{i} = -1}f(X_{i})\|_{\mathcal{F}}
+ \leq 2E \|\sum_{i=1}^{n} f(X_{i})\|_{\mathcal{F}}
+\end{equation*}
+where in the last inequality we have used Jensen's inequality and convexity of the norm. To prove the second inequality, let 
+$X_{n+i}, i =1,\cdots,n$ be an independent copy of $X_1, \cdots, 
+X_n$. Then proceeding as above,
+$E\|\sum_{i=1}^{n} f(X_{i})\|_{\mathcal{F}} = E \|\sum_{i=1}^{n}(f(X_{i}) - E f(X_{n+i})\|_{\mathcal{F}} \leq E \|\sum_{i=1}^{n}(f(X_{i} + a_i) - \sum_{i=1}^{n}(f(X_{n+i}+a_i)\|_{\mathcal{F}}$
+
+which clearly equals
+\begin{equation*}
+E_{\epsilon}E_X \|\sum_{i: \epsilon_{i}=1} \epsilon_i (f(X_i) + a_i - f(X_{n+i}) -a_{i}
+- \sum_{i: \epsilon_{i}=-1} \epsilon_i (f(X_i) + a_i - f(X_{n+i}) -a_{i}\|_{\mathcal{F}}
+\end{equation*}
+Now Pr being a product probability measure with identical coordinates, it is invariant by permutations of the coordinates, so that we may exchange $f(X_i)$ and $f(X_{n+i})$ for the i's where
+$\epsilon_i = -1$ in the last expectation. This gives that the quantity in the last equation equals 
+\begin{equation*}
+ E_{\epsilon} E_X \|\sum_{i=1}^{n} \epsilon_i(f(X_i)) + a_{i} - f(X_{n+i}) - a_{i})\|_{\mathcal{F}}\leq 2E \|\sum_{i=1}^{n} \epsilon_i(f(X_{i}) +a_i)\|_{\mathcal{F}}
+\end{equation*} which completes the proof.
+\end{proof}
+This simple but very useful result says that we can always compare the size of the expectation of the supremum of an empirical process to a symmetrized process. The idea usual is that the symmetrized 'rademacher' process has conditional on the $X_i's$ a very simple structure. One can then derive results of the Rademacher proecess and integrate the results over the distribution of the  $X_i's$
+
+\begin{thebibliography}
+\bibitem[Boucheron et~al.(2005)Boucheron, Bousquet, and Lugosi]{BBL04b}
+S.\ Boucheron, O.\ Bousquet, and G.\ Lugosi.
+\newblock Theory of classification: a survey of recent advances.
+\newblock \emph{ESAIM: Probability and Statistics}, 9:\penalty0 323--375, 2005.
+\bibitem[Gine et all]{Gine1984}
+\newblock Some Limit theorems for Empirical Processes 
+\newblock \emph{Ann. Probab.} Volume 12, Number 4 (1984), 929-989
+
+\end{thebibliography}
+\end{document}
