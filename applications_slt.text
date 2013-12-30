@@ -1,0 +1,122 @@
+\documentclass{article}
+
+\parindent=.25in
+\parskip=2ex
+
+\usepackage{amsthm}
+\usepackage{amsbsy}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[dvips]{lscape}
+
+\def\cX{\ensuremath{\mathcal{X}}}
+\def\cY{\ensuremath{\mathcal{Y}}}
+\def\cF{\ensuremath{\mathcal{F}}}
+\def\bP{\ensuremath{\mathbb{P}}}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+
+\title{Statistical Learning Theory}
+\author{Peadar Coyle}
+
+\begin{document}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\maketitle
+\section{Statistical Learning Theory}
+We want to introduce some notions from Statistical Learning Theory (an application in Computer Science/ Statistics) to descripe how 
+risk is controlled in predictive models, i.e., their expected inaccuracy on new data from the same source as that used to fit the model. 
+In this chapter, I summarize the basic forms of these results in the literature, sacrificing some rigour for brevity. 
+\subsection{The Traditional Setup}
+Consider predictors $X \in \mathcal{X}$ and responses $Y \in \mathcal{Y}$. Let \cF be a calss of functions $f:\cX \rightarrow \cY$ which take predictors as inputs. 
+   Define a loss function $l: \cY \times \cY \rightarrow \mathbb{R}^{+}$ which measures the cost of making poor predictions. 
+ Throughout this chapter I make the following assumption on the loss function. 
+ \begin{assumption}
+ $\forall f \in \cF$
+ \begin{equation*}
+ 0 \leq \mathcal{l}(y,y^{'}) \leq M \lt \infty
+ \end{equation*}
+ \end{assumption}
+ Then, I can define the risk of any predictor $f \in \cF$. 
+ \begin{definition}[Risk or generalization error]
+ \begin{equation}
+R(f):= \int \mathcal{l}(f(X),Y) d\mathbb{P} = \mathbb{E}_{\mathbb{P}}[\mathcal{l}(f(X),Y)], \end{equation}
+where (X,Y) $\sim \mathbb{P}$
+ \end{definition}
+ The risk or generalization error measures the expected cost of using f to predict Y from X given a new observation. 
+ Just to emphasize, the expectation is taken with respect to the distribution $\mathbb{P}$ of the test point (X,Y) which is
+ independent of f; the risk is a deterministic function of f with all the randomness in the data averaged away. 
+ \paragraph{} Since the true distribution \bP is unknown, so is R(f), but one can attempt to estimate it based on only the 
+ observed data. Suppose that I observe a random sample $D_n = \lbrace(X_1, Y_1), \cdots,  (X_n, Y_n) \rbrace$ so that 
+ $(X_i, Y_i) \stackrel{i.i.d}{\sim} \bP$, i.e. $D_n \sim \bP$. Define the \textit{training error or empirical risk} of 
+ f as follows.
+ \begin{defintion}[Training error or empirical risk]
+ \begin{equation}\hat{R}_{n}(f):=  \dfrac{1}{n} \sum_{i=1}^{n} \mathcal{l}(f(X_i),Y_i).
+\end{equation}
+
+ \end{defintion}
+ In other words, the in-sample training error, $\hat{R}_n(f)$, is the average loss over the actual training points. 
+It is easy to see that, because the training data $D_n$ and the test point (X,Y) are IID, then given some fixed function f (chosen 
+independently of the sample $D_n$), 
+\begin{equation}
+\hat{R}_n(f) = R(f) + \gamma_n(f)
+\end{equation}
+where $\gamma_n(f)$ is a mean-zero noise variable that reflects how far the training sample departs from being perfectly representative of the data-generating distribution.  Here I should emphasize that $\hat{R}_n(f)$ is random enough through the training sample 
+$D_n$. By the law of large numbers, for such fixed f, $\gamma_n(f) \rightarrow 0$ as $n \rightarrow \infty$, so, with enough data,
+one has a good idea of how well any given function will generalize to new data.
+\paragraph{} However, one is rarely interested in the performance of a single function f without adjustable parameters fixed for them in 
+advance by theory. Rather, researchers are interested in a class of plausible functions \cF, possibly indexed by some possibly infinite
+parameter $\theta \in \Theta$, which I refer to as a model. One fucntion (one particular parameter point) is chosen from the model class 
+minimizing some criterion funciton. Maximum likelihood, Bayesian maximization \textit{a posteriori}, least squares, regularized methods, 
+and empirical risk minimization (ERM) all have this flavor as do many other estimation methods. In these cases, one can define the 
+empirical risk minimizer for an appropriate loss function $\mathcal{l}$. 
+\begin{definition}\label{def:Empirical_Risk_Minimizer}[Empirical Risk Minimizer]
+\begin{equation}
+\hat{f} := \mathrm{argmin}_{f \in \cF} \hat{R}_{n} (f) = \mathrm{argmin}_{f \in \cF} (R(f) + \gamma_n(f)).
+\end{equation}\end{definition} 
+It is important to note that $\hat{f}$ is random and measurable with respect to the empirical risk process $\hat{R}_n(f)$
+for $f \in \cF$. Choosing a predictor $\hat{f}$ by empirical risk minimization (tuning the adjustable parameters so that $\hat{f}$
+fits the training data well) conflates predicting future data well (low $R(\hat{f})$, the true risk) with exploiting the accidents and noise of the 
+training data (large negative $\gamma_n(\hat{f})$, finite-sample noise). The true risk of $\hat{f}$ will generally be bigger than its in-sample risk 
+precisely because I picked it to match the data well. In doing so, $\hat{f}$ ends up reproducing some of the noise in the data and therefore will not
+generalize well. The difference between the true and apparent risk depends on the magnitude of the sampling fluctuations:
+\begin{equation}\label{equation:3.6}
+R(\hat{f}) - \hat{R}_{n}(\hat{f}) \leq \mathrm{sup}_{f\in \cF} \|\gamma_n(f)\| = \Gamma_n(\cF)
+\end{equation}
+In (\ref{equation:3.6}), $R(\hat{f})$ is random and measurable with respect to $\hat{f}$.
+\paragraph{} The main goal of statistical learning theory is to control $\Gamma_n(\cF)$ while making minimal assumptions abouthe the data generating 
+process - i.e. to provide bounds on over-fitting. Using more flexible models (allowing more general distributions, adding parameters, etc.) has two 
+contrasting effects. On the one hand, it improves the best possible accuracy, lowering the minimum of the true risk. On the other hand, it increases 
+the ability to, as it were, memorize noise for any fixed sample n. This qualitative observation - a generalization of the bias-variance trade-off from
+estimation theory - can be made use-fully precise by quantifying the complexity of model classes. A typical result is a confidence bound on $\Gamma_n$ (
+and hence on over-fitting), which says that with probability at least $1 - \nu$,
+\begin{equation}
+\Gamma_n(\cF) \leq \Theta(\Delta(\cF), n, \nu),
+\end{equation} 
+where $\Delta(\cdot)$ is some suitable measure of the complexity of the model $\cF$. To give specific forms of $\Theta(\cdot)$, I need to show that
+for a a particular f, $R(f)$ and $\hat{R}_{n}(f)$ will be close to each other for any fixed n without knowledge of the distribution of the data. 
+Furthermore, I need the complexity $\Delta(\cF)$, to claim that $R(f)$ and $\hat{R}_{n}(f)$ will be close, not only for a particular f, but
+uniformly over all $f \in \cF$. Together these two results will allow me to show, despite little knowledge fo the data generating process, how bad the $
+\hat{f}$ which I choose will be at forecasting future observations.
+\subsection{Concentration}
+The first step to controlling the difference between the empirical and expected risk is to develop concentration results for fixed functions.
+We have already introduced various inequalities. McDiarmid Inequality and Hoefferding's Inequality.
+These results are extremely important in Statistical learning theory, but it is beyond the scope of this thesis to go into much more detail.
+In the remainder of this section, I will show how to obtain concentration for the training error around the risk for two different choices of the random
+variables $Z_i$. This will lead to two different ways of controlling $\Gamma_n$ and hence the generalization error of prediction functions. 
+\subsection{Contol by Counting}
+Let us assume that we let $Z_i$ be the loss of the $i^{th}$ training point for some fixed function f. 
+Then by Hoeffding's inequality we get the following remarkable result
+\begin{equation}
+\matbbb{P}^n\left(\|R(f) - \hat{R}_{n}(f) \| \geq \epsilon \right) \leq 2 \exp\lbrace - \dfrac{2n\epsilon^{2}}{M^2}\rbrace
+\end{equation}
+This result is quite powerful, it says that the probability of observing data which will result in a training error much different from the expected 
+risk goes to zero exponentially with the size of the training set. The only assumption necessary was $0 \leq \mathcal{l}(y,y^{'}) \leq M \lt \infty$.
+\end{document}

@@ -43,7 +43,44 @@ The thesis will start with an introduction to some classical Concentration of Me
 information theory will be mentioned \textit{en passant} but this is not a paper on information theory. 
 Of chief interest for us is to provide applications from the world of Machine Learning or Statistics, but in a
 mathematical context. 
+\subsection{Concentration of Measure on the Sphere}
+Measure concentration is a fairly general phenomenon, which asserts that a \textit{reasonable}
+function $f: X \mapsto \mathbb{R}$ defined on a "large" probability space X "almost 
+always" takes values that are "very close" to the average value of f on X.
+\begin{example}
+Let $\mathbb{R}^{n}$ be the n-dimensional Euclidean space of all n-tuples 
+$x = (\xi_1, \cdots, \xi_n)$ with the standard scalar product and norm.
+Let 
+$\mathbb{S}^{n-1} = \lbrace x \in \mathbb{R}^{n} : \|x\| = 1 \rbrace $
+be the unit sphere. We introduce the geodesic metric on the sphere 
+$$dist(x,y) = \arccos <x, y>$$,
+the distance between x and y being the angle between x and y and the rotation invariant
+probability measure $\mu$ (which we will assume the existence and uniqueness of without a cumbersome
+formal proof).
+  Let $f: \mathbb{S}^{n-1} \mapsto \mathbb{R}$ be a function which is 1-Lipschitz:
+  $\|f(x) - f(y)\| \leq \mathrm{dist}(x,y) \; \mathrm{for all} \; x,y \in \mathbb{S}^{n-1}$.
+ Let $m_f$ be the median of f, that is the number such that
+ $\mu\lbrace x: f(x) \geq m_{f} \rbrace \geq \dfrac{1}{2}$ and  $\mu\lbrace x: f(x) \leq m_{f} \rbrace \geq \dfrac{1}{2}$.
+ We assume that for a Lipschitz function f, the median $m_f$ exists and is unique.
+ Then, for any $\epsilon \gt 0$, 
+$$\mu \lbrace x \in \mathbb{S}^{n-1} : \|f(x) - m_{f}\| \leq \epsilon \rbrace \geq 1 - \sqrt{\dfrac{\pi}{2}} e ^{\epsilon^{2} (n-2)/2}$$
+In particular, the value of f(x) in a \textit{"typical"} point $x \in \mathbb{S}^{n-1}$ deviates from the median only by about
+$1/{\sqrt{n}}$: that is, if $\epsilon_{n} \sqrt{n} \rightarrow +\infty$, however slowly, the probability that f(x) does not deviate from $m_f$ by more than $\epsilon_{n}$ tends to 1. 
+\end{example}
 
+\section{The big picture}
+Roughly speaking, one says that a probability measure is \emph{concentrated} if any set of positive probability can be expanded very slightly to contain most of the probability. A classic example (which I learned in statistical mechanics) is the uniform distribution on the interior of unit spheres in high dimensions. A little bit of calculus shows that, as the number of dimensions grows, the ratio of the surface area to the volume does too, so a shell of thin, constant thickness on the interior of the sphere ends up containing almost all of its volume, and overlaps heavily with any set of positive probability. 
+Equivalently, all well-behaved functional of a concentrated measure are very close to their expectation values with very high probability. (This is equivalent because one can specify a probability measure either through giving the probabilities of sets in the sigma-field, or by giving the expectation values of a sufficiently rich set of test functions, e.g., all bounded and continuous functions. 
+[At least, bounded and continuous functions are enough for the weak topology on measures, but if you understand that qualification then you know what I'm saying anyway.])
+
+In applications to probability, one is typically concerned with "concentration bounds", which are statements of the order of "for samples of size n, the probability that any function f in a well-behaved class F differs from its expectation value by h or more is at most $Ce^{-nr(h)}", with explicit values of the prefactor C and the rate function r; these might depend on the true distribution and on the function class, but not on the specific function f.
+
+These finite-sample upper bounds are to be distinguished from asymptotic results giving matching upper and lower bounds (large deviations theory proper). They are also distinct from deviation inequalities which may depend on the specific function f, though obviously finding such deviation inequalities is often a first step to proving concentration-of-measure results.  
+\subsection{The entropy method}
+One of the more recent methods used to derive concentration inequalities, the so-called \emph{entropy method}, is rooted in the 
+early investigations of Boltzmann and Gibbs into the foundations of statistical mechanics. A general problem of statistical mechanics
+is to demonstrate the "equivalence of ensembles", which can be interpreted as an exponential concentration property of the Hamiltonian, or energy function. The history of the modern entropy method is long and convoluted - and takes us into quantum filed theory and the logarithmic Sobolev inequality of Leonard Gross, its hidden simplicity was understood and emphasized by Michel Ledoux.
+Michel recognized the key role that subadditivity of entropy can play in the derivation of concentration inequalities. 
 \section{Notation}
 We begin by introduction some notation that is used throughout the paper. We assume
 that $X_1, \cdots , X_n$ are independent random variables taking values in a
@@ -63,6 +100,8 @@ further improved by Steele:
 Var(Z) \lt \dfrac{1}{2} \mathbb{E} \left[ \sum_{i=1}^{n} \left( 
 Z-Z^{(i)}\right)^2\right]
 \end{proposition}
+The quantity $\sum_{i=1}^{n} \left( 
+Z-Z^{(i)}\right)^2$ is called a jackknife estimate of variance. 
 Note that the inequality becomes an equality if f is the sum of its components. 
 The upshot of this result is that we have a simple and often sharp[TK: define] way
 of bound the variance of complicated functions of independent random variables. 
