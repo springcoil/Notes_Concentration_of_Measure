@@ -21,6 +21,53 @@
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{notation}[theorem]{Notation}
+\def\indep{\perp\!\!\!\perp}
+\newcommand{\given}{\mbox{ }\vert\mbox{ }}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\TV}[1]{\left|\left| #1 \right|\right|_{TV}}
+\newcommand{\email}[1]{\href{mailto:#1}{#1}}
+\newcommand{\loss}{\ell(Y,f(X))}
+\renewcommand{\hat}[1]{\widehat{#1}}
+\newcommand{\RademacherVariable}{\sigma}
+\newcommand{\RademacherComplexity}{\mathfrak{R}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\vcd}{\textsc{vcd}}
+\DeclareMathOperator*{\sgn}{sgn}
+\newcommand{\indicator}{\mathbf{1}}
+\renewcommand{\eqref}[1]{(\ref{eq:#1})}
+\newcommand{\mnorm}[1]{\ell\left(#1\right)}
+%\newcommand{\mnorm}[1]{\left|\left| #1\right|\right|}
+\newcommand{\riskmom}{\sqrt[q]{R_n^q(f)}}
+\newcommand{\stock}{IBM}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newcommand{\Pn}{\P^n}
+\newcommand{\Pd}{\P_1}
+\newcommand{\Yij}[2]{Y_{#1:#2}}
+\newcommand{\Yin}{\Yij{1}{n}}
+\newcommand{\Sij}[2]{\sigma_{#1:#2}}
+\newcommand{\Sin}{\Sij{1}{n}}
+\newcommand{\Sprod}[4]{\Sij{#1}{#2}\otimes\Sij{#3}{#4}}
+\newcommand{\Pij}[2]{\P_{#1:#2}}
+\newcommand{\Pin}{\Pij{1}{n}}
+\newcommand{\Pot}[4]{\P_{#1:#2\otimes #3:#4}}
+\newcommand{\Pprod}[4]{\Pij{#1}{#2}\otimes\Pij{#3}{#4}}
+\newcommand{\Yinf}{Y_\infty}
+\newcommand{\Sinf}{\sigma_\infty}
+\newcommand{\Pinf}{\P_\infty}
+\newcommand{\Pini}{\P_{1:n+1}}
+\newcommand{\Yini}{\Yij{1}{n+1}}
+
+\newcommand{\BigChar}[1]{\parbox{11pt}{\HUGE #1}}
+%\endlocaldefs
 
 \title{Statistical Learning Theory}
 \author{Peadar Coyle}
@@ -119,4 +166,165 @@ Then by Hoeffding's inequality we get the following remarkable result
 \end{equation}
 This result is quite powerful, it says that the probability of observing data which will result in a training error much different from the expected 
 risk goes to zero exponentially with the size of the training set. The only assumption necessary was $0 \leq \mathcal{l}(y,y^{'}) \leq M \lt \infty$.
+\subsection{Capacity}
+\label{sec:capacity}
+
+For ``small'' models, we can just count the number of functions in the class
+and take the union bound. Suppose that $\F = \{f_1,\ldots,f_N\}$. Then we have
+\begin{align}
+  \P\left( \sup_{1\leq i \leq N} |R(f_i) - \hat{R}_n(f_i)| > \epsilon
+  \right)& \leq \sum_{i=1}^N \P\left(  |R(f_i) - \hat{R}_n(f_i)| > \epsilon
+  \right) \\ &\leq N\exp\left\{ - \frac{2n\epsilon^2}{K}\right\},
+  \label{eq:union-bound}
+\end{align}
+by Theorem \ref{thm:hoeffding}. Most interesting models are not small in this
+sense, but similar results hold when model size is measured
+appropriately.
+
+There are a number of measures for the size or capacity of a model.
+Algorithmic stability
+\citep{KearnsRon1999,BousquetElisseeff2002,BousquetElisseeff2001} quantifies
+the sensitivity of the chosen function to small perturbations to the data.
+Similarly, maximal discrepancy \citep{Vapnik2000} asks how different the
+predictions could be if two functions are chosen using two separate data sets.
+A more direct, functional-analytic approach partitions $\F$ into equivalence
+classes under some metric, leading to covering numbers
+\citep{Pollard1990,Pollard1984}.  Rademacher complexity
+\citep{BartlettMendelson2002} directly describes a model's ability to fit
+random noise. We focus on a measure which is both intuitive and powerful:
+Vapnik-Chervonenkis (VC) dimension \citep{Vapnik1998,Vapnik2000}.
+
+VC dimension starts as an idea about collections of sets.
+\begin{definition}
+  Let $\mathbb{U}$ be some (infinite) set and $S$ a finite subset of
+  $\mathbb{U}$. Let $\mathcal{C}$ be a family of subsets of $\mathbb{U}$. We
+  say that $\mathcal{C}$ \emph{shatters} $S$ if for every $S' \subseteq S$,
+  $\exists C \in\mathcal{C}$ such that $S' = S \cap C$.
+\end{definition}
+Essentially, $\mathcal{C}$ can shatter a set $S$ if it can pick out every
+subset of points in $S$. This says that the collection $\mathcal{C}$ is very
+complicated or flexible. The cardinality of the largest set $S$ that can be
+shattered by $\mathcal{C}$ is the latter's VC dimension.
+\begin{definition}
+  [VC dimension]
+  The \emph{Vapnik-Chervonenkis (VC) dimension} of a collection
+  $\mathcal{C}$ of subsets of $\mathbb{U}$ is
+  \begin{equation}
+    \vcd(\mathcal{C}) := \sup \{ |S| : S\subseteq \mathbb{U}\mbox{ and
+      $S$ is shattered by
+    } \mathcal{C} \}.
+  \end{equation}
+\end{definition}
+To see why this is a ``dimension'', we need one more notion.
+\begin{definition}
+  [Growth function] The \emph{growth function} $G(\mathcal{C},n)$ of a
+  collection $\mathcal{C}$ of subsets of $\mathbb{U}$ is the maximum
+  number of
+  subsets which can be formed by intersecting a set $S \subset \mathbb{U}$ of
+  cardinality $n$ with $\mathcal{C}$,
+  \begin{equation}
+    G(n,\mathcal{C}) := \sup_{S\subset U~:~ |S|=n}{|S\wedge \mathcal{C}|}
+  \end{equation}
+\end{definition}
+The growth function counts how many {\em effectively} distinct sets the
+collection contains, when we can only observe what is going on at $n$ points,
+not all of $\mathbb{U}$.  If $n \leq \vcd(\mathcal{C})$, then from the definitions
+$G(n,\mathcal{C}) = 2^n$, If the VC dimension is finite, however, and $n >
+\vcd(\mathcal{C})$, then $G(n,\mathcal{C}) < 2^n$, and in fact it can be shown
+\citep{VapnikChervonenkis1971} that
+\begin{equation}
+  G(n,\mathcal{C}) \leq
+  (n+1)^{\vcd(\mathcal{C})}.
+\end{equation}
+This polynomial
+growth of capacity with $n$ is why $\vcd$ is a ``dimension''.  
+% The bound on the
+% growth function will recur several times in our results, so we define
+% \begin{equation}
+% GF(n,h) := (n+1)^h
+% \end{equation}
+
+Using VC dimension to measure the capacity of function classes is
+straightforward.  Define the indicator function $\indicator_A(x)$ to take the
+value 1 if $x\in A$ and 0 otherwise. Suppose that $f\in\F$,
+$f:\mathbb{U}\rightarrow\R$. Each $f$ corresponds to the set
+\begin{equation}
+C_f = \{ (u,a) : \indicator_{(0,\infty)}(f(u)-b)=1,\ \ u\in\mathbb{U},\ \ b\in\R\},
+\end{equation}
+so $\F$ corresponds to the class $\mathcal{C}_\F := \{ C_f : f \in \F\}$.
+Essentially, the growth function $G(n,\vcd(\F))$ counts the effective number of
+functions in $\F$, i.e., how many can be told apart using only $n$
+observations.  When $\vcd(\F) < \infty$, this number grows only polynomially
+with $n$.  This observation lets us control the risk over the entire model,
+providing one of the pillars of statistical learning theory.
+
+\begin{theorem}
+  [\citet{VapnikChervonenkis1971}]
+  \label{thm:vapnik}
+  Suppose that $\vcd(\F)< \infty$ and $0\leq\ell(y,y')\leq K <
+  \infty$. Then, 
+  \begin{equation}
+    \label{eq:vcbound}
+    \P \left(\sup_{f\in\F} |R(f) - \hat{R}_n(f)| > \epsilon\right)
+    \leq 4(2n+1)^{\vcd(\F)} \exp \left\{ - \frac{n\epsilon^2}{K^2_1} \right\} ~,
+  \end{equation}
+  where $K_1$ depends only on $K$ and not $n$ or $\F$.
+\end{theorem}
+The proof of this theorem has a similar flavor to the union bound argument
+given in \eqref{union-bound}.
+
+This theorem has as an immediate corollary a bound for the out-of-sample
+risk. Since $\sup_{f\in {\cal F}}$ is inside the probability statement in
+\eqref{vcbound}, it applies to both pre-specified and to data-dependent
+functions, including any $\widehat{f}$ chosen by fitting a model or minimizing
+empirical risk. 
+\begin{corollary}
+  \label{cor:vapnik}
+  When \autoref{thm:vapnik} applies, for any $\eta>0$ and any $f \in \F$, with probability at least $1-\eta$,
+  \begin{equation}
+  R(f) \leq \widehat{R}_n(f) + K_1\sqrt{\frac{\vcd(\F)\log(2n+1) +
+      \log 4/\eta}{n}}.
+  \end{equation}
+\end{corollary}
+The factor $K_1$ can be calculated explicitly but is unilluminating and we will not
+need it.  Conceptually, the right-hand side of this inequality resembles
+standard model selection criteria, like AIC or BIC, with in-sample fit plus a
+penalty term which goes to zero as $n\rightarrow\infty$. Here however, the
+bound holds with high probability despite lack of knowledge of $\P$ and it has
+nothing to do with asymptotic convergence: it holds for each $n$.  It does
+however hold {\em only} with high $\P$ probability, not always.
+
+VC dimension is well understood for some function classes. For instance, if
+$\F=\{\mathbf{x}\mapsto \bs{\gamma}\cdot\mathbf{x} : \bs{\gamma} \in \R^p\}$
+then $\vcd(\F)=p+1$, i.e. it is the number of free parameters in a linear
+regression plus 1.  VC dimension does not always have such a nice relation to
+the number of free parameters however; the classic example is the model
+$\F=\{x\mapsto \sin(\omega x) : \omega \in \R\}$, which has only one free
+parameter, but $\vcd(\F)=\infty$.\footnote{This result follows if we can show
+  that for any positive integer $J$ and any binary sequence $(r_1,\ldots,r_J)$,
+  there exists a vector $(x_1,\ldots,x_J)$ such that
+  $\indicator_{[0,1]}(\sin(\omega x_i))=r_i$. If we choose $x_i=2\pi 10^{-i}$,
+  then one can show that taking $\omega=\frac{1}{2}\left(\sum_{i=1}^J
+    (1-r_i)10^i +1\right)$ solves the system of equations.}  At the
+same time, there are model classes (support vector machines) which may
+have infinitely many parameters but finite VC dimension
+\citep{CristianiniShawe-Taylor2000}. This illustrates a further
+difference between the statistical learning approach and the usual information
+criteria, which are based on parameter-counting.
+
+The concentration results in \autoref{thm:vapnik} and \autoref{cor:vapnik} work
+well for independent data. The first shows how quickly averages concentrate around
+their expectations: exponentially fast in the size of the data.  The second
+result generalizes the first from a single function to entire function classes.
+Both results, as stated, depend critically on the independence of the random
+variables.  For time series, we must be able to handle dependent data.  In
+particular, because time-series data are dependent, the length $n$ of
+a sample
+path $Y_1,\ldots,Y_n$ exaggerates how much information it contains.  Knowing
+the past allows forecasters to predict future data (at least to some degree),
+so actually observing those future data points gives less information about the
+underlying process than in the IID case. Thus, while in \autoref{thm:hoeffding}
+the probability of large discrepancies between empirical means and their
+expectations decreases exponentially in $n$, in the dependent case, the
+effective sample size may be much less than $n$ resulting in looser b
 \end{document}
