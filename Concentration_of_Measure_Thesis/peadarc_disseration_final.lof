@@ -1,0 +1,5 @@
+\select@language {english}
+\contentsline {figure}{\numberline {1}{\ignorespaces Linear regression example with Pseudo-Randomly generated data}}{34}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Illustration of VC dimension for some function classes.}}{40}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Time Series example showing the changes in Beef consumption over the 20th Century in the US}}{44}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Visualizing the tradeoff between confidence ($\epsilon $, $y$-axis) and effective data ($\mu $, $x$-axis). The black curve indicates the region where the bound becomes trivial. Below this line, the probability is bounded by 1. Darker colors indicate lower probability of the ``bad'' event --- that the difference in risks exceeds $\epsilon $. The colors correspond to the natural logarithm of the bound on this probability.}}{50}{figure.4}

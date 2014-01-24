@@ -1,0 +1,52 @@
+\begin{thebibliography}{999}
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem[Adams and Nobel(2010)Adams and
+  Nobel]{Adams-Nobel-VC-classes-under-ergodic}
+{\sc Adams, T.~M., and Nobel, A.~B.} (2010), \enquote{Uniform convergence of
+  {Vapnik}-{Chervonenkis} classes under ergodic sampling,} \emph{Annals of
+  Probability}, {\bf 38}, 1345--1367.
+
+\bibitem[Bartlett and Mendelson(2002)Bartlett and
+  Mendelson]{BartlettMendelson2002}
+{\sc Bartlett, P.~L., and Mendelson, S.} (2002), \enquote{Rademacher and
+  {G}aussian complexities: {R}isk bounds and structural results,} \emph{Journal
+  of Machine Learning Research}, {\bf 3}, 463--482.
+
+\bibitem[Pollard(1984)Pollard]{Pollard1984}
+{\sc Pollard, D.} (1984), \emph{Convergence of Stochastic Processes}, Springer
+  Verlag, New York.
+
+\bibitem[Shao et~al.(2000)Shao, Cherkassky, and Li]{ShaoCherkassky2000}
+{\sc Shao, X., Cherkassky, V., and Li, W.} (2000), \enquote{Measuring the
+  {VC}-dimension using optimized experimental design,} \emph{Neural
+  computation}, {\bf 12}(8), 1969--1986.
+
+\bibitem[van~de Geer(1990)van~de Geer]{Geer1990}
+{\sc van~de Geer, S.} (1990), \enquote{Estimating a regression function,}
+  \emph{Annals of Statistics}, {\bf 18}(2), 907--924.
+
+\bibitem[van~de Geer(2000)van~de Geer]{Geer2000}
+{\sc van~de Geer, S.} (2000), \emph{Empirical Processes in M-estimation},
+  Cambridge University Press, Cambridge, UK.
+
+\bibitem[Vapnik(1998)Vapnik]{Vapnik1998}
+{\sc Vapnik, V.~N.} (1998), \emph{Statistical learning theory}, John Wiley and
+  Sons, New York.
+
+\bibitem[Vapnik(2000)Vapnik]{Vapnik2000}
+{\sc Vapnik, V.~N.} (2000), \emph{The Nature of Statistical Learning Theory},
+  Springer Verlag, New York, 2nd edn.
+
+\bibitem[Vapnik and Chervonenkis(1991)Vapnik and
+  Chervonenkis]{VapnikChervonenkis1991}
+{\sc Vapnik, V.~N., and Chervonenkis, A.~J.} (1991), \enquote{The necessary and
+  sufficient conditions for consistency of the method of empirical risk,}
+  \emph{Pattern Recognition and Image Analysis}, {\bf 1}(3), 284--305.
+
+\bibitem[Vapnik et~al.(1994)Vapnik, Levin, and LeCun]{VapnikLevin1994}
+{\sc Vapnik, V.~N., Levin, E., and LeCun, Y.} (1994), \enquote{Measuring the
+  {VC}-dimension of a learning machine,} \emph{Neural Computation}, {\bf 6}(5),
+  851--876.
+
+\end{thebibliography}

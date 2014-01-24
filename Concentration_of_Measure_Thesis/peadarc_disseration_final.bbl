@@ -1,0 +1,334 @@
+\begin{thebibliography}{10}
+
+\bibitem{Pandas}
+{pandas: Python Data Analysis Library}.
+\newblock Online, 2012.
+
+\bibitem{AdamsNobel2010}
+Terrence~M. Adams and Andrew~B. Nobel.
+\newblock Uniform convergence of vapnik–chervonenkis classes under ergodic
+  sampling.
+\newblock {\em The Annals of Probability}, 38(4):1345--1367, 07 2010.
+
+\bibitem{Azuma}
+K.~Azuma.
+\newblock Weighted sums of certain dependent random variables.
+\newblock {\em Tohoku Mathematical Journal}, 19:357--367, 1967.
+
+\bibitem{Bartlett}
+Peter~L. Bartlett and Shahar Mendelson.
+\newblock Rademacher and gaussian complexities: Risk bounds and structural
+  results.
+\newblock {\em J. Mach. Learn. Res.}, 3:463--482, March 2003.
+
+\bibitem{barvinok2005math}
+Alexander Barvinok.
+\newblock Math 710: Measure concentration.
+\newblock {\em Lecture Notes}, 2005.
+
+\bibitem{Berend_Kontorovich_missing_mass_2012}
+D.~Berend and A.~Kontorovich.
+\newblock On the concentration of the missing mass.
+\newblock {\em Electronic Communications in Probability}, 18(3):1--7, 2013.
+
+\bibitem{bergstra+al:2010-scipy}
+James Bergstra, Olivier Breuleux, Fr{\'{e}}d{\'{e}}ric Bastien, Pascal Lamblin,
+  Razvan Pascanu, Guillaume Desjardins, Joseph Turian, David Warde-Farley, and
+  Yoshua Bengio.
+\newblock Theano: a {CPU} and {GPU} math expression compiler.
+\newblock In {\em Proceedings of the Python for Scientific Computing Conference
+  ({SciPy})}, June 2010.
+\newblock Oral Presentation.
+
+\bibitem{Bernstein}
+S.N Bernstein.
+\newblock Probability theory (4th ed.)(in russian), 1946.
+
+\bibitem{bobkov1999exponential}
+Sergej~G Bobkov and Friedrich G{\"o}tze.
+\newblock Exponential integrability and transportation cost related to
+  logarithmic sobolev inequalities.
+\newblock {\em Journal of Functional Analysis}, 163(1):1--28, 1999.
+
+\bibitem{boucheron2013concentration}
+S.~Boucheron, G.~Lugosi, and P.~Massart.
+\newblock {\em Concentration Inequalities: A Nonasymptotic Theory of
+  Independence}.
+\newblock OUP Oxford, 2013.
+
+\bibitem{SLT_Lugosi_Bocheron}
+Olivier Bousquet, Stéphane Boucheron, and Gábor Lugosi.
+\newblock Introduction to statistical learning theory.
+\newblock In Olivier Bousquet, Ulrike Luxburg, and Gunnar Rätsch, editors,
+  {\em Advanced Lectures on Machine Learning}, volume 3176 of {\em Lecture
+  Notes in Computer Science}, pages 169--207. Springer Berlin Heidelberg, 2004.
+
+\bibitem{bousquet2002stability}
+Olivier Bousquet and Andr{\'e} Elisseeff.
+\newblock Stability and generalization.
+\newblock {\em The Journal of Machine Learning Research}, 2:499--526, 2002.
+
+\bibitem{Bradley2005}
+Richard~C. Bradley.
+\newblock Basic properties of strong mixing conditions. a survey and some open
+  questions.
+\newblock {\em Probability Surveys}, 2:107--144, 2005.
+
+\bibitem{CarrascoChen2002}
+Marine Carrasco and Xiaohong Chen.
+\newblock Mixing and moment properties of various garch and stochastic
+  volatility models.
+\newblock {\em Econometric Theory}, null:17--39, 2 2002.
+
+\bibitem{catoni2004statistical}
+O.~Catoni and J.~Picard.
+\newblock {\em Statistical learning theory and stochastic optimization: Ecole
+  d'Et{\'e} de Probabilit{\'e}s de Saint-Flour, XXXI - 2001}.
+\newblock Lecture notes in mathematics. Springer, 2004.
+
+\bibitem{Chatterjee2005}
+S.~{Chatterjee}.
+\newblock {An error bound in the Sudakov-Fernique inequality}.
+\newblock {\em ArXiv Mathematics e-prints}, October 2005.
+
+\bibitem{2009arXiv0906.1034C}
+S.~{Chatterjee} and P.~S. {Dey}.
+\newblock {Applications of Stein's method for concentration inequalities}.
+\newblock {\em ArXiv e-prints}, June 2009.
+
+\bibitem{CorlessGonnet1996}
+Gonnet G. Hare D. Jeffrey~D. Corless, R. and D.~Knuth.
+\newblock On the lambert w function.
+\newblock {\em Advances in Computational Mathematics}, 5(1).
+
+\bibitem{CortesMansour2010}
+C.~Cortes, Y.~Mansour, and M.~Mohri.
+\newblock {\em Learning bounds for importance weighting," in Advances in Neural
+  Information Processing Systems 23}, volume~23.
+\newblock MIT Press, 2010.
+
+\bibitem{cover2006elements}
+T.M. Cover and J.A. Thomas.
+\newblock {\em Elements of Information Theory}.
+\newblock Wiley, 2006.
+
+\bibitem{CristianiniShawe-Taylor2000}
+Nello Cristianini and John Shawe-Taylor.
+\newblock {\em An introduction to support vector machines and other
+  kernel-based learning methods}.
+\newblock Cambridge university press, 2000.
+
+\bibitem{DejongDharmarajan2009}
+David~N. DeJong, Roman Liesenfeld, Guilherme~V. Moura, Hariharan Dharmarajan,
+  and Jean-François Richard.
+\newblock Efficient likelihood evaluation of state-space representations, 2009.
+
+\bibitem{DeJongDave2007}
+D.N. DeJong and C.~Dave.
+\newblock {\em Structural Macroeconometrics: (Second Edition)}.
+\newblock Princeton University Press, 2011.
+
+\bibitem{doukhan1994mixing}
+P.~Doukhan.
+\newblock {\em Mixing: properties and examples}.
+\newblock Lecture notes in statistics. Springer-Verlag, 1994.
+
+\bibitem{DudleyBound}
+R.M Dudley.
+\newblock The sizes of compact subsets of hilbert space and continuity of
+  gaussian processes.
+\newblock {\em Journal of Functional Analysis}, 1(3):290 -- 330, 1967.
+
+\bibitem{dudley1999uniform}
+R.M. Dudley.
+\newblock {\em Uniform Central Limit Theorems}.
+\newblock Cambridge Studies in Advanced Mathematics. Cambridge University
+  Press, 1999.
+
+\bibitem{HausslerBound1989}
+Andrzej Ehrenfeucht, David Haussler, Michael Kearns, and Leslie Valiant.
+\newblock A general lower bound on the number of examples needed for learning.
+\newblock {\em Information and Computation}, 82(3):247 -- 261, 1989.
+
+\bibitem{Gine1984}
+Evarist Gin{\'e} and Joel Zinn.
+\newblock Some limit theorems for empirical processes.
+\newblock {\em The Annals of Probability}, pages 929--989, 1984.
+
+\bibitem{hastie2001elements}
+T.~Hastie, R.~Tibshirani, and J.H. Friedman.
+\newblock {\em The Elements of Statistical Learning: Data Mining, Inference,
+  and Prediction}.
+\newblock Springer series in statistics. Springer, 2001.
+
+\bibitem{Hoeffding}
+W.~Hoeffding.
+\newblock Probability inequalities for sums of bounded random variables.
+\newblock {\em Journal of the American Statistical Association},
+  58(301):13--30, March 1963.
+
+\bibitem{JordanLipschitz}
+WilliamB. Johnson, Joram Lindenstrauss, and Gideon Schechtman.
+\newblock Extensions of lipschitz maps into banach spaces.
+\newblock {\em Israel Journal of Mathematics}, 54(2):129--138, 1986.
+
+\bibitem{KS_1998}
+M.~J. Kearns and L.~K. Saul.
+\newblock Large deviation methods for approximate probabilistic inference in
+  \emph{Proceedings of the 14th Conference on Uncertaintly in Artifical
+  Intelligence}, 1998.
+
+\bibitem{Kontorovich_Metric}
+L.~{Kontorovich}.
+\newblock {Metric and Mixing Sufficient Conditions for Concentration of
+  Measure}.
+\newblock {\em ArXiv Mathematics e-prints}, October 2006.
+
+\bibitem{Ledoux_lecture_notes}
+M.~Ledoux.
+\newblock Concentration of measure and logarithmic sobolev inequalities in
+  \emph{S\'eminaire de Probabilit\'es XXXIII} ser. lecture notes in math, 1999.
+
+\bibitem{Lugosi}
+G.~Lugosi.
+\newblock Concentration of measure inequalities - lecture notes, 2009.
+
+\bibitem{marton1996measure}
+Katalin Marton.
+\newblock A measure concentration inequality for contracting markov chains.
+\newblock {\em Geometric \& Functional Analysis GAFA}, 6(3):556--571, 1996.
+
+\bibitem{McDiarmid_1997}
+C.~McDiarmid.
+\newblock Centering sequences with bounded differences.
+\newblock {\em Combinatorics, Probability and Computing}, 6, 1997.
+
+\bibitem{McDiarmid_tutorial}
+C.~McDiarmid.
+\newblock {\em Concentration,}.
+\newblock Probabilistic Methods for Algorithmic Discrete Mathematics. Springer,
+  1998.
+
+\bibitem{McDonald_TimeSeries}
+D.~J. {McDonald}, C.~{Rohilla Shalizi}, and M.~{Schervish}.
+\newblock {Time series forecasting: model evaluation and selection using
+  nonparametric risk bounds}.
+\newblock {\em ArXiv e-prints}, December 2012.
+
+\bibitem{mcquarrie1998regression}
+A.D.R. McQuarrie and C.L. Tsai.
+\newblock {\em Regression and Time Series Model Selection}.
+\newblock World Scientific, 1998.
+
+\bibitem{Milman}
+V.D. Milman.
+\newblock A new proof of a. dvoretzky's theorem on cross-sections of convex
+  bodies.
+\newblock {\em Funkcional. Anal. i Prilozhen. (in Russian)}, 5 (4):28–37,
+  1971.
+
+\bibitem{Ledoux}
+M.Ledoux.
+\newblock {\em The Concentration of Measure Phenomenon}, volume~89 of {\em
+  Mathematical Surveys and Monographs}.
+\newblock American Mathematical Society, 2001.
+
+\bibitem{Mokkadem1988}
+Abdelkader Mokkadem.
+\newblock Mixing properties of arma processes.
+\newblock {\em Stochastic Processes and their Applications}, 29(2):309--315,
+  September 1988.
+
+\bibitem{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock {\em Journal of Machine Learning Research}, 12:2825--2830, 2011.
+
+\bibitem{massart}
+P.Massart.
+\newblock {\em The Concentration of Measure Phenomenon}.
+\newblock Lecture Notes in Mathematics. Springer, 2007.
+
+\bibitem{Pollard1990}
+D.~Pollard.
+\newblock {\em Empirical Processes: Theory and Applications}.
+\newblock Conference Board of the Mathematical Science: NSF-CBMS regional
+  conference series in probability and statistics. Institute of Mathematical
+  Statistics, 1990.
+
+\bibitem{Raginsky_ConcMeasure}
+Maxim Raginsky and Igal Sason.
+\newblock Concentration of measure inequalities in information theory,
+  communications and coding.
+\newblock {\em CoRR}, abs/1212.4663, 2012.
+
+\bibitem{romer2011advanced}
+D.~Romer.
+\newblock {\em Advanced Macroeconomics}.
+\newblock The McGraw-Hill series in economics. McGraw-Hill Education, 2011.
+
+\bibitem{Shalizi2009}
+Cosma~Rohilla Shalizi.
+\newblock Dynamics of bayesian updating with dependent data and misspecified
+  models.
+\newblock {\em Electronic Journal of Statistics}, 3:1039--1074, 2009.
+
+\bibitem{Talagrand95}
+M.~Talagrand.
+\newblock Concentration of measure and isoperimteric inequalities in product
+  space.
+\newblock {\em Publications Math{\'{e}}matiques de {l'I.H.E.S}}, 81:73--205,
+  1995.
+
+\bibitem{TalagrandInequality}
+Michel Talagrand.
+\newblock New concentration inequalities in product spaces.
+\newblock {\em Inventiones mathematicae}, 126(3):505--563, 1996.
+
+\bibitem{tao2012topics}
+T.~Tao.
+\newblock {\em Topics in Random Matrix Theory}.
+\newblock Graduate studies in mathematics. American Mathematical Society, 2012.
+
+\bibitem{Touchette20091}
+Hugo Touchette.
+\newblock The large deviation approach to statistical mechanics.
+\newblock {\em Physics Reports}, 478(1–3):1 -- 69, 2009.
+
+\bibitem{Tropp_FoCM_2011}
+J.A. Tropp.
+\newblock User-friendly tail bounds for sums of random matrices.
+\newblock {\em Foundations of Computational Mathematics}, 12(4), August 2012.
+
+\bibitem{vapnik2000nature}
+V.~Vapnik.
+\newblock {\em The Nature of Statistical Learning Theory}.
+\newblock Information Science and Statistics. Springer, 2000.
+
+\bibitem{VapnikChervonenkis1971}
+Vladimir~N Vapnik and A~Ya Chervonenkis.
+\newblock On the uniform convergence of relative frequencies of events to their
+  probabilities.
+\newblock {\em Theory of Probability \& Its Applications}, 16(2):264--280,
+  1971.
+
+\bibitem{varadhan2008}
+S.~R.~S. Varadhan.
+\newblock Large deviations.
+\newblock {\em The Annals of Probability}, 36(2):397--419, 03 2008.
+
+\bibitem{Yu1994}
+V.Yu.
+\newblock Rates of convergence for empirical processes of stationary mixing
+  sequences.
+\newblock {\em Annals of Probability}, 22(1):94--116, 1994.
+
+\bibitem{LargeDeviations}
+Peter Whittle.
+\newblock Large-deviation theory.
+\newblock In {\em Probability via Expectation}, Springer Texts in Statistics,
+  pages 306--316. Springer New York, 2000.
+
+\end{thebibliography}

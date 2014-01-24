@@ -1,0 +1,50 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Acknowledgements}{4}{section.1}
+\contentsline {paragraph}{}{4}{section*.3}
+\contentsline {section}{\numberline {2}Notation}{6}{section.2}
+\contentsline {section}{\numberline {3}Introduction}{7}{section.3}
+\contentsline {paragraph}{}{7}{section*.4}
+\contentsline {paragraph}{}{8}{section*.5}
+\contentsline {paragraph}{}{8}{section*.6}
+\contentsline {paragraph}{}{8}{section*.7}
+\contentsline {subsection}{\numberline {3.1}What does the word Application mean?}{8}{subsection.3.1}
+\contentsline {paragraph}{}{9}{section*.8}
+\contentsline {subsection}{\numberline {3.2}What is in this thesis?}{9}{subsection.3.2}
+\contentsline {paragraph}{}{9}{section*.9}
+\contentsline {section}{\numberline {4}What are other examples of Concentration of Measure?}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Probabilistic viewpoint}{14}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Some further classic examples}{16}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}What is Empirical Process theory}{18}{subsection.4.3}
+\contentsline {paragraph}{}{18}{section*.10}
+\contentsline {subsection}{\numberline {4.4}So why should we care about empirical process theory?}{19}{subsection.4.4}
+\contentsline {paragraph}{}{19}{section*.11}
+\contentsline {paragraph}{}{20}{section*.12}
+\contentsline {section}{\numberline {5}Basic concentration inequalities via the martingale approach}{20}{section.5}
+\contentsline {subsection}{\numberline {5.1}The Azuma-Hoeffding inequality}{21}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}McDiarmid's inequality}{26}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Hoeffding's inequality, and its improved version (the Kearns-Saul inequality)}{30}{subsection.5.3}
+\contentsline {section}{\numberline {6}Statistical Learning Theory}{31}{section.6}
+\contentsline {subsection}{\numberline {6.1}Notations from learning theory}{31}{subsection.6.1}
+\contentsline {paragraph}{What is the formal defintion of learning?}{31}{section*.13}
+\contentsline {subsubsection}{\numberline {6.1.1}Classification}{32}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}Regression}{32}{subsubsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.3}Density Estimation}{33}{subsubsection.6.1.3}
+\contentsline {subsection}{\numberline {6.2}The Traditional Setup}{34}{subsection.6.2}
+\contentsline {paragraph}{}{35}{section*.14}
+\contentsline {paragraph}{}{36}{section*.15}
+\contentsline {paragraph}{}{36}{section*.16}
+\contentsline {subsection}{\numberline {6.3}Concentration}{37}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Contol by Counting}{37}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Capacity}{38}{subsection.6.5}
+\contentsline {section}{\numberline {7}Rademacher Processes}{41}{section.7}
+\contentsline {paragraph}{}{41}{section*.17}
+\contentsline {section}{\numberline {8}Time series}{43}{section.8}
+\contentsline {section}{\numberline {9}Risk bounds}{46}{section.9}
+\contentsline {subsection}{\numberline {9.1}Setup and assumptions}{46}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Fixed memory}{48}{subsection.9.2}
+\contentsline {section}{\numberline {10}Discussion}{53}{section.10}
+\contentsline {paragraph}{}{54}{section*.18}
+\contentsline {section}{\numberline {A}Machine Learning - Computational Techniques}{55}{appendix.A}
+\contentsline {paragraph}{}{55}{section*.19}
+\contentsline {section}{\numberline {B}Auxiliary results}{55}{appendix.B}
+\contentsline {section}{\numberline {C}Proofs of selected results}{56}{appendix.C}

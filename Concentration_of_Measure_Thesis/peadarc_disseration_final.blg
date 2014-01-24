@@ -1,0 +1,74 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: peadarc_disseration_final.aux
+The style file: plain.bst
+Database file #1: bib.bib
+I was expecting a `,' or a `}'---line 615 of file bib.bib
+ : 
+ : pages = {90, 323-375},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in Pandas
+Too many commas in name 1 of "Corless, R., Gonnet,G., Hare, D., Jeffrey, D. and Knuth, D." for entry CorlessGonnet1996
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Corless, R., Gonnet,G., Hare, D., Jeffrey, D. and Knuth, D." for entry CorlessGonnet1996
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Corless, R., Gonnet,G., Hare, D., Jeffrey, D. and Knuth, D." for entry CorlessGonnet1996
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Corless, R., Gonnet,G., Hare, D., Jeffrey, D. and Knuth, D." for entry CorlessGonnet1996
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Corless, R., Gonnet,G., Hare, D., Jeffrey, D. and Knuth, D." for entry CorlessGonnet1996
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Corless, R., Gonnet,G., Hare, D., Jeffrey, D. and Knuth, D." for entry CorlessGonnet1996
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Corless, R., Gonnet,G., Hare, D., Jeffrey, D. and Knuth, D." for entry CorlessGonnet1996
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Corless, R., Gonnet,G., Hare, D., Jeffrey, D. and Knuth, D." for entry CorlessGonnet1996
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Corless, R., Gonnet,G., Hare, D., Jeffrey, D. and Knuth, D." for entry CorlessGonnet1996
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Corless, R., Gonnet,G., Hare, D., Jeffrey, D. and Knuth, D." for entry CorlessGonnet1996
+while executing---line 1090 of file plain.bst
+Warning--empty year in CorlessGonnet1996
+You've used 59 entries,
+            2118 wiz_defined-function locations,
+            867 strings with 13218 characters,
+and the built_in function-call counts, 17072 in all, are:
+= -- 1665
+> -- 740
+< -- 6
++ -- 306
+- -- 237
+* -- 1100
+:= -- 2918
+add.period$ -- 184
+call.type$ -- 59
+change.case$ -- 277
+chr.to.int$ -- 0
+cite$ -- 61
+duplicate$ -- 673
+empty$ -- 1416
+format.name$ -- 237
+if$ -- 3556
+int.to.chr$ -- 0
+int.to.str$ -- 59
+missing$ -- 70
+newline$ -- 293
+num.names$ -- 118
+pop$ -- 324
+preamble$ -- 1
+purify$ -- 235
+quote$ -- 0
+skip$ -- 456
+stack$ -- 0
+substring$ -- 928
+swap$ -- 92
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 202
+warning$ -- 2
+while$ -- 163
+width$ -- 61
+write$ -- 627
+(There were 11 error messages)
